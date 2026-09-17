@@ -9,11 +9,11 @@
 
 ## 项目 / 实践记录
 
-### 1. LLM API 调用基础
+### DAY 1	阿里云百炼 API	LLM 与 embedding 服务底座	注册→实名认证→创建 API Key→用 Postman/curl 跑一次文本生成	拿到一次成功 JSON 返回截图
 - 使用阿里云百炼 API 完成文本生成调用
 - 今天的输出结果，调用成功的请求与响应截图：
 
-curl -X POST https://ws-rbr2a1xi5vtyeinr.cn-beijing.maas.aliyuncs.com/api/v1/services/aigc/multimodal-generation/generation \
+curl -X POST https://{WorkspaceId}.cn-beijing.maas.aliyuncs.com/api/v1/services/aigc/multimodal-generation/generation \
 > -H "Authorization: Bearer $DASHSCOPE_API_KEY" \
 > -H "Content-Type: application/json" \
 > -d '{
@@ -40,7 +40,7 @@ curl -X POST https://ws-rbr2a1xi5vtyeinr.cn-beijing.maas.aliyuncs.com/api/v1/ser
 - <img width="830" height="196" alt="image" src="https://github.com/user-attachments/assets/9eff0a61-2c07-4532-96e4-c4a1c9cb8b79" />
 
 
-### 2. Dify 低代码应用搭建
+### DAY 2	Dify	主力低代码平台（RAG / Agent / 工作流）	注册云端账号（或本地部署）→创建第一个对话应用	能在网页里跟它正常对话
 - 搭建第一个对话应用（Chat Assistant）
 - [这里设置阿里云百炼的API key：
 <img width="1396" height="726" alt="image" src="https://github.com/user-attachments/assets/f5485fee-8148-4478-a0b9-a41a142ac365" />
@@ -80,7 +80,7 @@ Prompt 日志如下：
 <img width="1396" height="720" alt="image" src="https://github.com/user-attachments/assets/e3757709-1b10-4167-866d-7d0e84aefcf2" />
 
 
-### 3. RAG 知识库与向量检索
+### DAY 3	n8n	通用工作流编排（集成 OCR / 表单 / LLM）	注册 Cloud 或本地起服务→做一个「HTTP 请求→返回结果」的小流程	工作流成功执行，有日志
 - 使用 Dify 知识库完成语义检索测试
 - <img width="1396" height="786" alt="image" src="https://github.com/user-attachments/assets/709f9876-2226-4019-b27b-ecff4c2ca69c" />
 <img width="1394" height="684" alt="image" src="https://github.com/user-attachments/assets/fdb1940e-8978-4e1d-b933-fc2fe8d19d8a" />
@@ -89,7 +89,6 @@ Prompt 日志如下：
 点击“发布”后，点击execute workflow，然后在terminal运行
 curl -X POST "http://localhost:5678/webhook/text-summary"   -H "Content-Type: application/json"   -d '{"text":"今天学习了 n8n 的基本概念：workflow、节点、触发器；还学会了用 LLM 对一段中文新闻做自动摘要。"}'
 <img width="1396" height="198" alt="image" src="https://github.com/user-attachments/assets/c13ae8a0-1478-4e46-a7c7-f5077fa37d1f" />
-![Uploading image.png…]()
 
 
 ## 技术栈
